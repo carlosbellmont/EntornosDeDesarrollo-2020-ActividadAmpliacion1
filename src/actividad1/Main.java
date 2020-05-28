@@ -1,5 +1,6 @@
 package actividad1;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -14,23 +15,38 @@ public class Main {
 			switch(opcion) {
 			case "1": 
 				// Case Crear un Tour
+				ArrayList<Boolean> valoraciones = new ArrayList<Boolean>();
+				valoraciones.add(true);
+				valoraciones.add(false);
+
+				SitioEmblematico sitioDePago = new SitioEmblematico(valoraciones, SitioEmblematico.PRECIO_ESTANDAR, "Museo del Prado");
+				SitioEmblematico sitioGratis = new SitioEmblematico(valoraciones, SitioEmblematico.PRECIO_GRATIS, "Plaza mayor");
+				ArrayList<SitioEmblematico> sitiosEmblematicos = new ArrayList<SitioEmblematico>();
+				sitiosEmblematicos.add(sitioDePago);
+				sitiosEmblematicos.add(sitioGratis);
+
+				TourGratis t1 = new TourGratis(6, "Tour 1", valoraciones, sitiosEmblematicos, false);
+				t1.plazasOcupadas = 9999;
+				
 				break;
-			case "2":
+			case "2": 
+				break;
+			case "3":
 				// Case Mostrar detalles de un tour
 				break;
-			case "3": 
+			case "4": 
 				// Case Listar tours antiguos
 				break;
-			case "4": 
+			case "5": 
 				// Case Calcular beneficio total
 				break;
-			case "5":
+			case "6":
 				// Case 5 Salir
 				break;
 			default: System.out.println("Opción no válida. Introduce un número entre el 1 y el 5.");
 			break;
 			}
-		}while(opcion.compareTo("5")!=0);
+		}while(opcion.compareTo("6")!=0);
 		teclado.close();
 	}
 
