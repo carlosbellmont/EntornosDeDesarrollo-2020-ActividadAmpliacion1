@@ -12,10 +12,16 @@ public abstract class Tour {
 	
 	public ArrayList<Boolean> valoraciones;
 	
-	public ArrayList<SitioEmblematico> sitiosEmblematicos;
+	public ListaSitioEmblematicos sitiosEmblematicos;
 	
 	// si true - es de manana si false es de tarde
 	public boolean turno; 
 	
+	public void mostrarsePorPantalla() {
+		System.out.println("plazasMaximas " + plazasMaximas);
+		System.out.println("plazasOcupadas " + plazasOcupadas);
+		System.out.println("nombre " + nombre);
+		sitiosEmblematicos.mostrarse();
+	}
 	
 }

@@ -20,5 +20,10 @@ public class SitioEmblematico {
 		this.precio = precio;
 		this.nombre = nombre;
 	}
+	
+	public void mostrarse() {
+		System.out.println("nombre " + nombre);
+		System.out.println("precio " + precio);
+	}
 
 }

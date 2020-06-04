@@ -15,24 +15,14 @@ public class Main {
 			switch(opcion) {
 			case "1": 
 				// Case Crear un Tour
-				ArrayList<Boolean> valoraciones = new ArrayList<Boolean>();
-				valoraciones.add(true);
-				valoraciones.add(false);
-
-				SitioEmblematico sitioDePago = new SitioEmblematico(valoraciones, SitioEmblematico.PRECIO_ESTANDAR, "Museo del Prado");
-				SitioEmblematico sitioGratis = new SitioEmblematico(valoraciones, SitioEmblematico.PRECIO_GRATIS, "Plaza mayor");
-				ArrayList<SitioEmblematico> sitiosEmblematicos = new ArrayList<SitioEmblematico>();
-				sitiosEmblematicos.add(sitioDePago);
-				sitiosEmblematicos.add(sitioGratis);
-
-				TourGratis t1 = new TourGratis(6, "Tour 1", valoraciones, sitiosEmblematicos, false);
-				t1.plazasOcupadas = 9999;
-				
+					crearTour();
 				break;
 			case "2": 
+					crearVariosTour();
 				break;
 			case "3":
-				// Case Mostrar detalles de un tour
+					mostrarDetallesDeUnTour(crearTour());
+				// Case Mostrar detalles de un to1ur
 				break;
 			case "4": 
 				// Case Listar tours antiguos
@@ -50,12 +40,43 @@ public class Main {
 		teclado.close();
 	}
 
-	public static void crearTour() {
+	public static Tour crearTour() {
 
+		ArrayList<Boolean> valoraciones1 = new ArrayList<Boolean>();
+		valoraciones1.add(true);
+		valoraciones1.add(false);
+
+		SitioEmblematico sitioDePago1 = new SitioEmblematico(valoraciones1, SitioEmblematico.PRECIO_ESTANDAR, "Museo del Prado");
+		SitioEmblematico sitioGratis1 = new SitioEmblematico(valoraciones1, SitioEmblematico.PRECIO_GRATIS, "Plaza mayor");
+		ArrayList<SitioEmblematico> sitiosEmblematicos1 = new ArrayList<SitioEmblematico>();
+		sitiosEmblematicos1.add(sitioDePago1);
+		sitiosEmblematicos1.add(sitioGratis1);
+		ListaSitioEmblematicos lista1 = new ListaSitioEmblematicos(sitiosEmblematicos1);
+
+		TourGratis t1= new TourGratis(6, "Tour 1", valoraciones1, lista1, false);
+		return t1;
 	}
+	
+	public static Tour crearVariosTour() {
 
-	public static void mostrarDetallesDeUnTour() {
+		ArrayList<Boolean> valoraciones1 = new ArrayList<Boolean>();
+		valoraciones1.add(true);
+		valoraciones1.add(false);
 
+		SitioEmblematico sitioDePago1 = new SitioEmblematico(valoraciones1, SitioEmblematico.PRECIO_ESTANDAR, "Museo del Prado");
+		SitioEmblematico sitioGratis1 = new SitioEmblematico(valoraciones1, SitioEmblematico.PRECIO_GRATIS, "Plaza mayor");
+		ArrayList<SitioEmblematico> sitiosEmblematicos1 = new ArrayList<SitioEmblematico>();
+		sitiosEmblematicos1.add(sitioDePago1);
+		sitiosEmblematicos1.add(sitioGratis1);
+		ListaSitioEmblematicos lista1 = new ListaSitioEmblematicos(sitiosEmblematicos1);
+
+		TourGratis t1= new TourGratis(6, "Tour 1", valoraciones1, lista1, false);
+		return t1;
+	}
+	
+
+	public static void mostrarDetallesDeUnTour(Tour tour) {
+		tour.mostrarsePorPantalla();
 	}
 
 	public static void listarTodosTours() {

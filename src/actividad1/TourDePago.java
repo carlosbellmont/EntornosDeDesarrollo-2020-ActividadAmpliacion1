@@ -8,7 +8,7 @@ public class TourDePago extends Tour {
 
 	public int precio = 10;
 
-	public TourDePago(int plazasOcupadas, String nombre, ArrayList<Boolean> valoraciones,ArrayList<SitioEmblematico> sitiosEmblematicos, boolean turno) {
+	public TourDePago(int plazasOcupadas, String nombre, ArrayList<Boolean> valoraciones, ListaSitioEmblematicos sitiosEmblematicos, boolean turno) {
 		super();
 		this.plazasOcupadas = plazasOcupadas;
 		this.nombre = nombre;
