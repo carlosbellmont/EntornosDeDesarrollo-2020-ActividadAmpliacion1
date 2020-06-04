@@ -17,5 +17,14 @@ public class TourDePago extends Tour {
 		this.turno = turno;
 	}
 
+	@Override
+	public float calcularBeneficio() {
+		return precio * plazasOcupadas;
+	}
+
+	@Override
+	public float calcularCosteParaElUsuario() {
+		return precio + sitiosEmblematicos.getCoste();
+	}
 	
 }

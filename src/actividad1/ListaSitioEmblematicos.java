@@ -15,4 +15,12 @@ public class ListaSitioEmblematicos {
 			lista.get(i).mostrarse();
 		}
 	}
+	
+	public float getCoste() {
+		float precioTotal = 0;
+		for (int i = 0; i< lista.size(); i++) {
+			precioTotal += lista.get(i).precio;
+		}	
+		return precioTotal;
+	}
 }

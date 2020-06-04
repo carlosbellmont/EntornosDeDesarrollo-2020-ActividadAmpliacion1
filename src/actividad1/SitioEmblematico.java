@@ -11,19 +11,21 @@ public class SitioEmblematico {
 	
 	public ArrayList<Boolean> valoraciones;
 	
-	public int precio;
+	public float precio;
 	
 	public String nombre;
 	
-	public SitioEmblematico(ArrayList<Boolean> valoraciones, int precio, String nombre) {
+	public SitioEmblematico(ArrayList<Boolean> valoraciones, float precio, String nombre) {
 		this.valoraciones = valoraciones;
 		this.precio = precio;
 		this.nombre = nombre;
 	}
 	
 	public void mostrarse() {
+		System.out.println("===========Mostrando Lugar de interes===========");
 		System.out.println("nombre " + nombre);
 		System.out.println("precio " + precio);
 	}
+
 
 }
